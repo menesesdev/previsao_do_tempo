@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:previsao_do_tempo/widgets/resumo.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -16,6 +17,20 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Text("Previsão do tempo"),
         centerTitle: true,
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            Resumo(
+              cidade: "Piripiri-Pi",
+              temperaturaAtual: 30,
+              temperaturaMaxima: 33,
+              temperaturaMinima: 28,
+              descricao: "Ensolarado",
+              numeroIcone: 1,
+            ),
+          ],
+        ),
       ),
     );
   }
