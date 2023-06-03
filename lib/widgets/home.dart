@@ -17,6 +17,14 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Text("Previsão do tempo"),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.brightness_6),
+            onPressed: () {
+              print('Botão pressionado!');
+            },
+          ),
+        ],
       ),
       body: Center(
         child: Column(

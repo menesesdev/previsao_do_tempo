@@ -11,7 +11,7 @@ class Resumo extends StatelessWidget {
       required this.temperaturaMaxima,
       required this.temperaturaMinima,
       required this.numeroIcone});
-      
+
   final String cidade;
   final String descricao;
   final double temperaturaAtual;
@@ -35,7 +35,52 @@ class Resumo extends StatelessWidget {
               ],
             )
           ],
-        )
+        ),
+        Text(
+          cidade,
+          style: TextStyle(
+            fontSize: 18,
+          ),
+        ),
+        Padding(padding: EdgeInsets.all(5)),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            IntrinsicHeight(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image(
+                    image: AssetImage("assets/images/$numeroIcone.png"),
+                  ),
+                  Padding(padding: EdgeInsets.all(4)),
+                  Text(
+                    "${temperaturaAtual.toStringAsFixed(0)} ºC",
+                    style: TextStyle(fontSize: 40),
+                  ),
+                  VerticalDivider(
+                    color: Colors.grey,
+                    thickness: 1,
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("${temperaturaMaxima.toStringAsFixed(0)} ºC"),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text("${temperaturaMinima.toStringAsFixed(0)} ºC"),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+        Padding(
+          padding: EdgeInsets.all(5),
+        ),
+        Text(descricao),
       ],
     );
   }
